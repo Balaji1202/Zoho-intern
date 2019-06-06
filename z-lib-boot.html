@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- zoho icon -->
+        <link rel="icon" href="http://chiroloop.com/wp-content/uploads/2015/12/zoho-logo.png">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/dashstyle.css">
+        <link rel="stylesheet"
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+                crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <title>ZLibrary</title>
+
+    </head>
+
+    <body>  
+<!-- Main header -->
+        <div class="jumbotron text-center container-fluid" style="margin-bottom:0; height: 200px; z-index: 1;">
+            <div class="row">
+                <div class="col-2">
+                    <img src= "images/zoho-logo.png" width="250px" height="100px" alt="zoho-logo">
+                </div>
+                <div class="col">
+                    <h1>ZOHO LIBRARY</h1>
+                    <p>An online portal to access the entire library!</p> 
+                </div>
+                <div class="col-2">
+                    <img src="images/img_avatar.png" style="border-radius:50%" alt="profilepic" width="100px" height="130px">
+                </div>
+            </div>
+        </div> 
+<!-- End of main header -->
+
+<!-- Navigation header -->
+        <nav class="row navbar navbar-expand-lg navbar-light bg-light" style="position:relative; z-index: 1;">
+            <a class="navbar-brand" href="#">Zoho</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Add a book(Admin only)</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Browse by
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Author Name</a>
+                                <a class="dropdown-item" href="#">Publisher Name</a>
+                                <a class="dropdown-item" href="#">Book Name</a>
+                                <a class="dropdown-item" href="#">ISBN</a>
+                            </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Help and support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Feedback</a>
+                    </li>
+                </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search a book</button>
+              </form>
+            </div>
+        </nav>
+<!-- end of header -->
+    
+<!-- start of sidebar and card layout row -->
+       
+<!-- <div class="container row"> -->
+   <div class="row">
+    <div id="wrapper" class="col-1" style="position: relative">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        ZLibrary
+                    </a>
+                </li>
+                <li>
+                    <a onmouseover="openFun()" onmouseout="closeFun()" href="#">Books</a>
+                </li>
+                <li>
+                    <a onmouseover="openFun1()" onmouseout="closeFun1()" href="#">Login</a>
+                </li>
+                <li>
+                    <a onmouseover="openFun2()" onmouseout="closeFun2()" href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="#" onmouseover = "openFun()" onmouseout="closeFun()" data-toggle="modal" data-target="#modalForm" >Add a Book</a>
+        <a href="#" onmouseover = "openFun()" onmouseout="closeFun()">Search a Book</a>
+        <a href="#" onmouseover = "openFun()" onmouseout="closeFun()">Delete a Book</a>
+        <a href="#" onmouseover = "openFun()" onmouseout="closeFun()">Lend a Book</a>
+        <a href="#" onmouseover = "openFun()" onmouseout="closeFun()">Return a Book</a>
+    </div>
+    <div id="mySidenav1" class="sidenav1">
+        <a href="#" onmouseover = "openFun1()" onmouseout="closeFun1()" >User Login</a>
+        <a href="#" onmouseover = "openFun1()" onmouseout="closeFun1()" >Admin Login</a>
+        <a href="#" onmouseover = "openFun1()" onmouseout="closeFun1()">Guest Login</a>
+    </div>
+    <div id="mySidenav2" class="sidenav2">
+        <a href="#" onmouseover = "openFun2()" onmouseout="closeFun2()" >About Zoho</a>
+        <a href="#" onmouseover = "openFun2()" onmouseout="closeFun2()">Developers</a>
+        <a href="#" onmouseover = "openFun2()" onmouseout="closeFun2()">Zoho Library</a>
+        <a href="#" onmouseover = "openFun2()" onmouseout="closeFun2()">Team Zoho</a>
+    </div>
+        
+            <!-- card layout for metrics view -->
+            <div id="metrics" class="col" style=" z-index: -1;position: fixed;">
+                <div class="grid-container">
+                    <div class="row" style="padding: 10px;">
+                        
+                        <div class="card col-4 grid-item" style="width: 18rem; padding: 10px;">
+                            <img class="card-img-top" src="images/bar.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Book purchase view</h5>
+                                <a href="#" class="btn btn-primary">View full data</a>
+                            </div>
+                        </div>
+
+                        <div class="card col-4" style="width: 18rem;">
+                            <img class="card-img-top" src="images/bar.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Book purchase view</h5>
+                                <a href="#" class="btn btn-primary">View full data</a>
+                            </div>
+                        </div>
+                        <div class="card col-4" style="width: 18rem;">
+                            <img class="card-img-top" src="images/bar.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Book purchase view</h5>
+                                <a href="#" class="btn btn-primary">View full data</a>
+                            </div>
+                        </div>     
+                        <div class="card col-4" style="width: 18rem;">
+                            <img class="card-img-top" src="images/bar.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Book purchase view</h5>
+                                <a href="#" class="btn btn-primary">View full data</a>
+                            </div>
+                        </div>     
+                        <div class="card col-4" style="width: 18rem;">
+                            <img class="card-img-top" src="images/bar.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Book purchase view</h5>
+                                <a href="#" class="btn btn-primary">View full data</a>
+                            </div>
+                        </div>     
+                        <div class="card col-4" style="width: 18rem;">
+                            <img class="card-img-top" src="images/bar.png" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Book purchase view</h5>
+                                <a href="#" class="btn btn-primary">View full data</a>
+                            </div>
+                        </div>      
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+
+        <!-- Form with Modal -->
+            <div class="modal fade" id="modalForm" style="display: none"> 
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div style=" color: black">
+                    <h1 class="text-center">Hey! Welcome to ZLibrary <b>Add book page</b>.</h1>
+                    <h2 class="text-center" >Please fill this form to add a book!</h2>
+                </div>
+                    <form class="container-fluid">
+                        <div class="form-group;">
+                            <label for="bId" class="font-weight-bold">Book Id</label>
+                            <input type="text" class="form-control" id="bId" aria-describedby="emailHelp" placeholder="Enter book identification number">
+                            <small id="isbnid" class="form-text text-muted">Try to enter ISBN id</small>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="bName" class="font-weight-bold">Book Name</label>
+                            <input type="text" class="form-control" id="bName" placeholder="Enter Name of the book">
+                        </div>
+                        <div class="form-group">
+                            <label for="domain" class="font-weight-bold">Domain</label>
+                            <select class="form-control" id="domain">
+                                <option disabled selected>Enter the domain of the book</option>
+                                <option>Computer Science Engineering</option>
+                                <option>Information technology</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Automobile Engineering</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="aName" class="font-weight-bold">Author Name</label>
+                            <input type="text" class="form-control" id="aName" placeholder="Enter Author name of the book">
+                        </div>
+                        <div class="form-group">
+                            <label for="publ" class="font-weight-bold">Publications</label>
+                            <input type="text" class="form-control" id="publ" placeholder="Enter the publications of the book">
+                        </div>
+                        <div class="form-group">
+                            <label for="year" class="font-weight-bold">Publications Year</label>
+                            <select class="form-control" id="year">
+                                <option disabled selected>Enter the year of publication of the book</option>
+                                <option>1990</option>
+                                <option>1991</option>
+                                <option>1993</option>
+                                <option>1994</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rate" class="font-weight-bold">Rate</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">₹</span>
+                                </div>
+                                <input for="rate" type="text" class="form-control" aria-label="Amount (to the nearest INR)" id="rate" placeholder="">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Agree to terms and conditions of Zoho library</label>
+                            </div>
+                            <br>
+                            <button data-dismiss="modal" type="submit" class="btn btn-primary" aria-hidden="true">Submit</button>
+                            <button data-dismiss="modal" type="submit" class="btn btn-danger" >Close</button>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+    </body>
+    <script src="sidebar.js">
+    function hideMetrics(){
+        document.getElementById("metrics").display="none";
+    }
+    </script>
+</html>
